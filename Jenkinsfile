@@ -4,13 +4,13 @@ pipeline {
     environment {
         PROJECT = "/Users/nanayaw/Downloads/SimpleCalcus/SimpleCalcus.xcodeproj"
         SCHEME = "SimpleCalcus"
-        DESTINATION = "platform=iOS Simulator,name=iPhone 17,OS=26.0"
+        DESTINATION = "platform=iOS Simulator,name=iPhone 17,OS=18.0" // Adjust OS if needed
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/yourusername/CalculatorApp.git'
+                git branch: 'main', url: 'https://github.com/Jeffrey-14/SimpleCalcus.git'
             }
         }
 
@@ -21,7 +21,9 @@ pipeline {
                     xcodebuild clean build \
                     -project "$PROJECT" \
                     -scheme "$SCHEME" \
-                    -destination '$DESTINATION' | xcpretty
+                    -destination "$DESTINATION" \
+                    -allowProvisioningUpdates \
+                    -skipUnavailableDevices | xcpretty
                 """
             }
         }
@@ -33,15 +35,27 @@ pipeline {
                     xcodebuild test \
                     -project "$PROJECT" \
                     -scheme "$SCHEME" \
-                    -destination '$DESTINATION' | xcpretty --report junit --output build/reports/results.xml
+                    -destination "$DESTINATION" \
+                    -allowProvisioningUpdates \
+                    -skipUnavailableDevices \
+                    -resultBundlePath TestResults.xcresult | xcpretty --report junit --output build/reports/results.xml
                 """
             }
             post {
                 always {
                     junit 'build/reports/results.xml'
+                    archiveArtifacts artifacts: 'TestResults.xcresult/**', allowEmptyArchive: true
                 }
             }
         }
     }
-}
 
+    post {
+        success {
+            echo 'Build and tests completed successfully!'
+        }
+        failure {
+            echo 'Build or tests failed. Check console output for details.'
+        }
+    }
+}
