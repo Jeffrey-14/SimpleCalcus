@@ -4,7 +4,7 @@ pipeline {
     environment {
         PROJECT = "/Users/nanayaw/Downloads/SimpleCalcus/SimpleCalcus.xcodeproj"
         SCHEME = "SimpleCalcus"
-        DESTINATION = "platform=iOS Simulator,name=iPhone 17,OS=18.0" // Adjust OS if needed
+        DESTINATION = "platform=iOS Simulator,name=iPhone 16,OS=18.0" // Adjust OS if needed
     }
 
     stages {
