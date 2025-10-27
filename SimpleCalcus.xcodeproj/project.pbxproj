@@ -8,11 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		3D6B8A892EAF0A9F00649922 /* Jenkinsfile in Resources */ = {isa = PBXBuildFile; fileRef = 3D6B8A882EAF0A9F00649922 /* Jenkinsfile */; };
+		3D6B8A982EAF13D300649922 /* CalculatorLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D6B8A972EAF13C200649922 /* CalculatorLogic.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D6B8A922EAF139D00649922 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D6B8A5C2EAF050600649922 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D6B8A632EAF050600649922;
+			remoteInfo = SimpleCalcus;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		3D6B8A7B2EAF08EE00649922 /* SimpleCalcus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleCalcus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6B8A882EAF0A9F00649922 /* Jenkinsfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Jenkinsfile; sourceTree = "<group>"; };
+		3D6B8A8E2EAF139D00649922 /* SimpleCalcusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleCalcusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6B8A972EAF13C200649922 /* CalculatorLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -21,10 +34,22 @@
 			path = SimpleCalcus;
 			sourceTree = "<group>";
 		};
+		3D6B8A8F2EAF139D00649922 /* SimpleCalcusTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SimpleCalcusTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		3D6B8A612EAF050600649922 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D6B8A8B2EAF139D00649922 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -40,6 +65,9 @@
 				3D6B8A882EAF0A9F00649922 /* Jenkinsfile */,
 				3D6B8A662EAF050600649922 /* SimpleCalcus */,
 				3D6B8A7B2EAF08EE00649922 /* SimpleCalcus.app */,
+				3D6B8A8E2EAF139D00649922 /* SimpleCalcusTests.xctest */,
+				3D6B8A8F2EAF139D00649922 /* SimpleCalcusTests */,
+				3D6B8A972EAF13C200649922 /* CalculatorLogic.swift */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,6 +96,29 @@
 			productReference = 3D6B8A7B2EAF08EE00649922 /* SimpleCalcus.app */;
 			productType = "com.apple.product-type.application";
 		};
+		3D6B8A8D2EAF139D00649922 /* SimpleCalcusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D6B8A942EAF139D00649922 /* Build configuration list for PBXNativeTarget "SimpleCalcusTests" */;
+			buildPhases = (
+				3D6B8A8A2EAF139D00649922 /* Sources */,
+				3D6B8A8B2EAF139D00649922 /* Frameworks */,
+				3D6B8A8C2EAF139D00649922 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D6B8A932EAF139D00649922 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				3D6B8A8F2EAF139D00649922 /* SimpleCalcusTests */,
+			);
+			name = SimpleCalcusTests;
+			packageProductDependencies = (
+			);
+			productName = SimpleCalcusTests;
+			productReference = 3D6B8A8E2EAF139D00649922 /* SimpleCalcusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -80,6 +131,10 @@
 				TargetAttributes = {
 					3D6B8A632EAF050600649922 = {
 						CreatedOnToolsVersion = 26.0.1;
+					};
+					3D6B8A8D2EAF139D00649922 = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = 3D6B8A632EAF050600649922;
 					};
 				};
 			};
@@ -98,6 +153,7 @@
 			projectRoot = "";
 			targets = (
 				3D6B8A632EAF050600649922 /* SimpleCalcus */,
+				3D6B8A8D2EAF139D00649922 /* SimpleCalcusTests */,
 			);
 		};
 /* End PBXProject section */
@@ -111,6 +167,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3D6B8A8C2EAF139D00649922 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -118,10 +181,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D6B8A982EAF13D300649922 /* CalculatorLogic.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D6B8A8A2EAF139D00649922 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D6B8A932EAF139D00649922 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D6B8A632EAF050600649922 /* SimpleCalcus */;
+			targetProxy = 3D6B8A922EAF139D00649922 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3D6B8A6D2EAF050700649922 /* Debug */ = {
@@ -309,6 +388,48 @@
 			};
 			name = Release;
 		};
+		3D6B8A952EAF139D00649922 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Y339V85JD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = extreme.SimpleCalcusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleCalcus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimpleCalcus";
+			};
+			name = Debug;
+		};
+		3D6B8A962EAF139D00649922 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8Y339V85JD;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = extreme.SimpleCalcusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SimpleCalcus.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SimpleCalcus";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -326,6 +447,15 @@
 			buildConfigurations = (
 				3D6B8A702EAF050700649922 /* Debug */,
 				3D6B8A712EAF050700649922 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D6B8A942EAF139D00649922 /* Build configuration list for PBXNativeTarget "SimpleCalcusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D6B8A952EAF139D00649922 /* Debug */,
+				3D6B8A962EAF139D00649922 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
