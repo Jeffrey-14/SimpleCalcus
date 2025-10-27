@@ -30,6 +30,11 @@ class SimpleCalcusTests: XCTestCase {
         let result = calculator.subtract(5.0, 3.0)
         XCTAssertEqual(result, 2.0, accuracy: 0.0001)
     }
+    
+    func testSubtraction1() {
+        let result = calculator.subtract(9.0, 3.0)
+        XCTAssertEqual(result, 6.0, accuracy: 0.0001)
+    }
 
     func testMultiplication() {
         let result = calculator.multiply(4.0, 3.0)
