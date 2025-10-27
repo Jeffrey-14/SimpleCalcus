@@ -25,6 +25,10 @@ class SimpleCalcusTests: XCTestCase {
         let result = calculator.add(2.0, 3.0)
         XCTAssertEqual(result, 5.0, accuracy: 0.0001)
     }
+    func testAddition1() {
+        let result = calculator.add(5.0, 3.0)
+        XCTAssertEqual(result, 8.0, accuracy: 0.0001)
+    }
 
     func testSubtraction() {
         let result = calculator.subtract(5.0, 3.0)
