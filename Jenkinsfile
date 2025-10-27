@@ -4,7 +4,7 @@ pipeline {
     environment {
         PROJECT = "/Users/nanayaw/Downloads/SimpleCalcus/SimpleCalcus.xcodeproj"
         SCHEME = "SimpleCalcus"
-        DESTINATION = "platform=iOS Simulator,name=iPhone 16,OS=18.0" // Adjust OS if needed
+        DESTINATION = "platform=iOS Simulator,name=iPhone 16,OS=18.0" // Adjust based on Step 2
     }
 
     stages {
@@ -19,10 +19,10 @@ pipeline {
                 echo "Building iOS app..."
                 sh """
                     xcodebuild clean build \
-                    -project "$PROJECT" \
-                    -scheme "$SCHEME" \
-                    -destination "$DESTINATION" \
-                    -allowProvisioningUpdates | xcpretty
+                    -project "\${PROJECT}" \
+                    -scheme "\${SCHEME}" \
+                    -destination "\${DESTINATION}" \
+                    -allowProvisioningUpdates
                 """
             }
         }
@@ -32,16 +32,15 @@ pipeline {
                 echo "Running XCTest automation..."
                 sh """
                     xcodebuild test \
-                    -project "$PROJECT" \
-                    -scheme "$SCHEME" \
-                    -destination "$DESTINATION" \
+                    -project "\${PROJECT}" \
+                    -scheme "\${SCHEME}" \
+                    -destination "\${DESTINATION}" \
                     -allowProvisioningUpdates \
-                    -resultBundlePath TestResults.xcresult | xcpretty --report junit --output build/reports/results.xml
+                    -resultBundlePath TestResults.xcresult
                 """
             }
             post {
                 always {
-                    junit 'build/reports/results.xml'
                     archiveArtifacts artifacts: 'TestResults.xcresult/**', allowEmptyArchive: true
                 }
             }
