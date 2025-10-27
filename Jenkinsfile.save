@@ -4,7 +4,7 @@ pipeline {
     environment {
         PROJECT = "/Users/nanayaw/Downloads/SimpleCalcus/SimpleCalcus.xcodeproj"
         SCHEME = "SimpleCalcus"
-        DESTINATION = "platform=iOS Simulator,name=iPhone 17,OS=18.0" // Adjust OS if needed
+        DESTINATION = "platform=iOS Simulator,name=iPhone 17,OS=26.0" // Adjust OS if needed
     }
 
     stages {
@@ -22,7 +22,8 @@ pipeline {
                     -project "$PROJECT" \
                     -scheme "$SCHEME" \
                     -destination "$DESTINATION" \
-                    -allowProvisioningUpdates | xcpretty
+                    -allowProvisioningUpdates \
+                    -skipUnavailableDevices | xcpretty
                 """
             }
         }
@@ -36,6 +37,7 @@ pipeline {
                     -scheme "$SCHEME" \
                     -destination "$DESTINATION" \
                     -allowProvisioningUpdates \
+                    -skipUnavailableDevices \
                     -resultBundlePath TestResults.xcresult | xcpretty --report junit --output build/reports/results.xml
                 """
             }
@@ -57,3 +59,4 @@ pipeline {
         }
     }
 }
+																										
